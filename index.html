@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>copy to clipboard</title>
+</head>
+<body>
+
+    <h1>copy to clipboard with javascript</h1>
+    <textarea  id="to-copy" spellcheck="false">write something and copy it to your clipboard by clicking in the button below</textarea>
+    <button id="copy" type="button">copy in clipboard <span class="copiedText" aria-hidden="true">copied</span></button>
+    <textarea  id="cleared" placeholder="paste your copied content here, just to test"></textarea>
+    
+     <script>
+         var toCopy = document.getElementById('to-copy');
+         var bntCopy = document.getElementById('copy');
+         var paste = document.getElementById('cleared');
+         
+         bntCopy.addEventListener("click", function(){
+             toCopy.select();
+             paste.value = '';
+             if(document.execCommand('copy')){
+                 bntCopy.classList.add('copied');
+                 paste.focus();
+                 var temp = setInterval(function(){
+                     bntCopy.classList.remove('copied');
+                 }, 600);
+             }else{
+                 console.info('document.execCommand went wrong....');
+             }
+             return false;
+         })
+     </script>
+</body>
+</html>

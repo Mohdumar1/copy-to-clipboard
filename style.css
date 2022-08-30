@@ -1,0 +1,67 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: #444;
+    line-height: 1.6rem;
+}
+h1{
+    margin: 1.75rem auto 1.25rem;
+}
+textarea,
+button{
+    font-size: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+textarea{
+    display: block;
+    width: 300px;
+    max-width: 100%;
+    height: 75px;
+    margin: 2rem auto 1.5rem;
+    background: #f2f2f6;
+    border: 1px solid #ddd;
+    padding: 10px 15px;
+    resize: vertical;
+}
+[id="cleared"]{
+    margin-top: 4em;
+}
+textarea:focus{
+    border-color: #8fa423;
+}
+button{
+    position: relative;
+    padding: 8px 20px;
+    border: 0;
+    font-size: 0.835em;
+    text-transform: uppercase;
+    letter-spacing: 0.125rem;
+    font-weight: bold;
+    color: white;
+    background: #8fa423;
+    transition: background 0.275s;
+}
+button:hover,
+button:focus{
+    background: #74861A;
+}
+
+.copiedText{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-1em);
+    color: #000;
+    transition: all .500s;
+}
+.copied .copiedText{
+    opacity: 1;
+    transform: translateY(-2em);
+}
